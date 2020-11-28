@@ -1,0 +1,70 @@
+@import "../../../variables";
+
+:host {
+  > div {
+    display: flex;
+    position: relative;
+    max-width: 800px;
+    padding-right: 1em;
+
+    > div {
+      padding-right: 1.2em;
+
+      &.location,
+      &.matching {
+        width: 25%;
+      }
+
+      &.pattern {
+        width: 45%;
+      }
+
+      &.actions {
+        width: 5%;
+        padding: 0.4em 0;
+      }
+
+      > .error {
+        padding: 1em 1.5em;
+        border-radius: 4px;
+        font-size: 85%;
+        font-weight: 500;
+        color: #85464F;
+        background: #F9D1D4;
+      }
+    }
+
+    button.remove {
+      width: 1.2em;
+      height: 1.2em;
+      padding: 0;
+      border: 2px solid #999;
+      border-radius: 50%;
+      line-height: 1.1em;
+      font-size: 110%;
+      text-align: center;
+      color: #888;
+      background: #FFF;
+    }
+  }
+
+  @media(max-width: $breakpoint-mobile) {
+    > div {
+      display: block;
+      max-width: none;
+      padding: 0 1em 0 0;
+
+      > div:not(.actions) {
+        width: 100%;
+        padding: 0.3em 0;
+      }
+      
+      > div.actions {
+        position: absolute;
+        top: 0.3em;
+        right: -0.7em;
+        width: auto;
+      }
+    }
+  }
+}

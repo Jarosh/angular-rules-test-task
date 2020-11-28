@@ -1,0 +1,31 @@
+@import '../mixins';
+
+:host {
+  @include box-shadow(0, 0, 8px, #CCC);
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 5px;
+  background: #FFF;
+
+  > main {
+    padding-bottom: 1em;
+
+    h1 {
+      margin: 0 0 1em;
+      padding: 1.2em 1.2em 1.6em;
+      border-bottom: 1px solid #EEE;
+      font-size: 15px;
+      font-weight: 500;
+      color: #555;
+    }
+
+    app-rules-group {
+      @include box-shadow(1px, 1px, 5px, #DDD);
+      display: block;
+      margin: 1.2em 1em 0;
+      padding: 1.2em;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<form [formGroup]="rulesForm">
+  <h3>{{ title }}</h3>
+  <p>{{ subtitle }}</p>
+  <ng-container *ngFor="let rule of rulesForm.controls; let i = index">
+    <app-rule-entry
+      [index]="i"
+      [ruleForm]="rule"
+      (onRemoveRule)="removeRule($event)"
+    ></app-rule-entry>
+    <div *ngIf="i < rulesForm.controls.length - 1" class="rules-divider">OR</div>
+  </ng-container>
+  <button type="button" (click)="appendRule()">
+    New Rule
+  </button>
+</form>

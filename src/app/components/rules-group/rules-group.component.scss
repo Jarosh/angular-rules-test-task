@@ -1,0 +1,55 @@
+@import "../../../variables";
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 110%;
+  font-weight: 500;
+}
+
+p {
+  margin: 0.6em 0 1em;
+  font-size: 85%;
+  color: #666;
+}
+
+button {
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.8em 1.2em;
+  border: 2px solid #89A2C0;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: white;
+
+  &:before {
+    content: "+";
+    padding-right: 0.3em;
+    font-size: 120%;
+    font-weight: normal;
+  }
+
+  &:hover,
+  &:focus {
+    border: 2px solid #89A2C0;
+  }
+
+  &:hover {
+    background: #DDD;
+  }
+
+  &:active {
+    border-color: transparent;
+  }
+}
+
+.rules-divider {
+  padding: 0.5em 2em;
+  font-weight: bold;
+  color: #CCC;
+
+  @media(max-width: $breakpoint-mobile) {
+    text-align: center;
+  }
+}

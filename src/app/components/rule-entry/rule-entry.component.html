@@ -1,0 +1,32 @@
+<div [formGroup]="ruleForm">
+  <div class="location">
+    <select formControlName="location" (change)="changeLocation(ruleForm.controls.location.value)">
+      <option *ngFor="let location of RuleLocation | keyvalue: keepEnumSorting" [ngValue]="location.value">
+        {{ RuleLocationNames[location.value] }}
+      </option>
+    </select>
+  </div>
+  <div *ngIf="ruleForm.controls.location.value === RuleLocation.custom" class="matching">
+    <select formControlName="matching">
+      <option *ngFor="let matching of RuleMatching | keyvalue: keepEnumSorting" [ngValue]="matching.value">
+        {{ RuleMatchingNames[matching.value] }}
+      </option>
+    </select>
+  </div>
+  <div *ngIf="ruleForm.controls.location.value === RuleLocation.custom" class="pattern">
+    <input
+      type="text"
+      formControlName="pattern"
+      placeholder="Type a full or partial URL"
+      [ngClass]="{ 'is-invalid': submitted && ticket.controls.name.errors }"
+    />
+    <div class="error" [hidden]="ruleForm.controls.pattern.valid || ruleForm.controls.pattern.untouched">
+      URL is Missing
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" class="remove" (click)="removeRule()">
+      &times;
+    </button>
+  </div>
+</div>

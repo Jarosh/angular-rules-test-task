@@ -1,16 +1,27 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
+import { RulesGroupComponent } from './components/rules-group/rules-group.component';
+import { RuleEntryComponent } from './components/rule-entry/rule-entry.component';
+import { RulesService } from './services/rules.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ReactiveFormsModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        RulesGroupComponent,
+        RuleEntryComponent
       ],
+      providers: [
+        RulesService
+      ]
     }).compileComponents();
   }));
 
@@ -30,6 +41,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('morpheusone-test-task app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('Display Rules');
   });
 });
