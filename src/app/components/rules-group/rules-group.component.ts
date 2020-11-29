@@ -34,7 +34,7 @@ export class RulesGroupComponent implements OnInit {
       )
       .subscribe((val: IRule[]) => {
         if (this.rulesForm.valid) {
-          this.rulesService.saveRuleSet(val, this.blacklisted);  
+          this.rulesService.saveRuleSet(val, this.blacklisted);
         }
       });
   }

@@ -18,7 +18,7 @@ export class RuleEntryComponent {
   public RuleMatching: typeof RuleMatching = RuleMatching;
   public RuleLocationNames: { [key: string]: string } = RuleLocationNames;
   public RuleMatchingNames: { [key: string]: string } = RuleMatchingNames;
-  public keepEnumSorting: Function = () => 0;
+  public keepEnumSorting: () => number = () => 0;
 
   public changeLocation(location: RuleLocation): void {
     if (location === RuleLocation.custom) {

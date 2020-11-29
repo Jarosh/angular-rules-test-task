@@ -33,7 +33,7 @@ describe('RuleEntryComponent', () => {
 });
 
 @Component({
-  selector: `test-rule-entry`,
+  selector: `app-test-rule-entry`,
   template: `<app-rule-entry [index]="1" [ruleForm]="ruleForm"></app-rule-entry>`
 })
 class TestRuleEntryComponent {
